@@ -1,0 +1,52 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <filter>
+    <filter-name>auditFilter</filter-name>
+    <filter-class>com.mms.admin.AuditFilter</filter-class>
+<!--     <init-param>
+      <param-name>defaultUser</param-name>
+      <param-value>Hari</param-value>
+    </init-param> -->
+  </filter>
+  <filter>
+    <filter-name>loginFilter</filter-name>
+    <filter-class>com.mms.login.LoginFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>auditFilter</filter-name>
+    <url-pattern>/admissionPath</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping>
+    <filter-name>loginFilter</filter-name>
+    <url-pattern>/loginPath</url-pattern>
+  </filter-mapping>
+
+  
+  <servlet>
+  <servlet-name>admission</servlet-name>
+  <servlet-class>com.mms.admin.AdmissionServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  <servlet-name>login1</servlet-name>
+  <servlet-class>com.mms.login.LoginServlet</servlet-class>
+  </servlet>
+   <servlet-mapping>
+  <servlet-name>admission</servlet-name>
+  <url-pattern>/admissionPath</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>login1</servlet-name>
+  <url-pattern>/loginPath</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+</web-app>
